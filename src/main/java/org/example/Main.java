@@ -111,3 +111,34 @@ public class Main {
         };
     }
 }
+
+
+//        Методы для работы с JSON:
+//
+//        GsonBuilder().create(): создает экземпляр класса Gson с настройками по умолчанию 1.
+//        gson.fromJson(reader, listType): десериализует JSON-строку в объект Java 5.
+//
+//        Методы для работы с коллекциями:
+//
+//        visitors.forEach(visitor -> System.out.println(visitor.getName() + " " + visitor.getSurname())): выводит имя и фамилию каждого посетителя.
+//        visitors.stream().flatMap(visitor -> visitor.getFavoriteBooks().stream()).distinct().toList(): возвращает список уникальных книг, которые
+//        нравятся посетителям.
+//        visitors.stream().flatMap(visitor -> visitor.getFavoriteBooks().stream()).sorted(Comparator.comparingInt(Book::getPublishingYear)).forEach(book ->
+//        System.out.println(book.getName() + " (" + book.getPublishingYear() + ")")): выводит список книг, отсортированных по году публикации.
+//
+//        Методы для фильтрации и поиска:
+//
+//        visitors.stream().anyMatch(visitor -> visitor.getFavoriteBooks().stream().anyMatch(book -> book.getAuthor().equals("Jane Austen"))):
+//        проверяет, есть ли среди посетителей те, кто любит книги Джейн Остин.
+//        visitors.stream().map(visitor -> visitor.getFavoriteBooks().size()).max(Comparator.naturalOrder()).orElse(0):
+//        возвращает максимальное количество любимых книг среди посетителей.
+//
+//        Методы для группировки и сортировки:
+//
+//        visitors.stream().filter(LibraryVisitor::isSubscribed).collect(Collectors.groupingBy(visitor -> { ... }, Collectors.mapping(visitor ->
+//        new SmsMessage(visitor.getPhone(), getSmsMessage(visitor, averageFavoriteBooks)), Collectors.toList()))): группирует посетителей по категориям и
+//        создает список SMS-сообщений для каждого посетителя.
+//
+//        Методы для работы со строками:
+//
+//        getSmsMessage(visitor, averageFavoriteBooks): возвращает текст SMS-сообщения в зависимости от количества любимых книг посетителя.
