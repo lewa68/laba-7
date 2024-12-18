@@ -115,8 +115,8 @@ public class Main {
 
 //        Методы для работы с JSON:
 //
-//        GsonBuilder().create(): создает экземпляр класса Gson с настройками по умолчанию 1.
-//        gson.fromJson(reader, listType): десериализует JSON-строку в объект Java 5.
+//        GsonBuilder().create(): создает экземпляр класса Gson с настройками по умолчанию.
+//        gson.fromJson(reader, listType): десериализует JSON-строку в объект Java.
 //
 //        Методы для работы с коллекциями:
 //
